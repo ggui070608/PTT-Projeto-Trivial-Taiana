@@ -1,0 +1,130 @@
+/* Estilo geral */
+*{
+  margin: 0%;
+  padding: 0%;
+}
+
+
+body {
+    font-family: 'Georgia', serif;
+    background-color: #f4e1d2; /* Cor creme, como papel envelhecido */
+    color: #4b3a31; /* Cor marrom escuro, lembrando tinta de antigamente */
+    
+  }
+  
+  /* Cabeçalho */
+  header {
+    background-color: #6a4e23; /* Cor marrom escura */
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  header .logo h1 {
+    color: #f4e1d2; /* Cor clara para contraste */
+    font-family: 'Georgia', serif;
+    font-size: 36px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
+  
+  /* Menu */
+  nav ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+  }
+  
+  nav a {
+    color: #f4e1d2;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 18px;
+  }
+  
+  nav a:hover {
+    color: #d3a15c; /* Cor dourada que remete à luz suave */
+  }
+  
+  /* Carrossel */
+  .carrossel {
+    text-align: center;
+    margin-top: 40px;
+  }
+  
+  .carrossel h2 {
+    font-size: 28px;
+    font-family: 'Georgia', serif;
+    margin-bottom: 20px;
+    color: #4b3a31; /* Cor marrom escuro */
+  }
+  
+  /* Livros */
+  .livro-item, .turma-item, .fichamento-item, .desafio-item {
+    background-color: #fff8e1; /* Fundo envelhecido */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 250px;
+    text-align: center;
+    border: 2px solid #d3a15c; /* Bordas douradas */
+
+    margin-top: 60px;
+  }
+  
+  .livro-item h3, .turma-item h3, .fichamento-item h3, .desafio-item h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    font-family: 'Georgia', serif;
+    color: #4b3a31;
+  }
+  
+  .livro-item a, .turma-item a, .fichamento-item a, .desafio-item a {
+    color: #6a4e23;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 16px;
+  }
+  
+  .livro-item a:hover, .turma-item a:hover, .fichamento-item a:hover, .desafio-item a:hover {
+    color: #d3a15c;
+  }
+  
+  /* Rodapé */
+  footer {
+    background-color: #6a4e23;
+    color: #f4e1d2;
+    text-align: center;
+
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index: 10;
+    padding: 10px;
+    margin-bottom: 20px;
+  }
+  
+  /* Estilo do link */
+  a {
+    color: #6a4e23;
+    text-decoration: none;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  }
+
+  .menu{
+    
+    justify-content: center;
+  }
+
+  .livros-lista h2, .turmas-lista h2, .fichamentos-lista h2, .desafios-lista h2{
+    margin-top: 20px;
+    margin-left: 20px;
+    position: fixed;
+    text-align: center;
+  }
+  
