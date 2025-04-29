@@ -1,0 +1,39 @@
+/* Página Turmas */
+*{
+  margin: 0%;
+  padding: 0%;
+}
+
+
+.turmas-lista {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 20px;
+  }
+  
+  .turma-item {
+    background-color: #FFF;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 250px;
+    text-align: center;
+  }
+  
+  .turma-item h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: #333;
+  }
+  
+  .turma-item a {
+    color: #FF6347;
+    font-weight: bold;
+    text-decoration: none;
+  }
+  
+  .turma-item a:hover {
+    text-decoration: underline;
+  }
+  

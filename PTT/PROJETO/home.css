@@ -1,0 +1,42 @@
+/* Página Home */
+*{
+  margin: 0%;
+  padding: 0%;
+}
+
+
+.carrossel {
+    text-align: center;
+    margin-top: 40px;
+  }
+  
+  .carrossel h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    font-family: 'Merriweather', serif;
+  }
+  
+  .carrossel-container {
+    display: flex;
+    overflow-x: scroll;
+    gap: 30px;
+    justify-content: center;
+  }
+  
+  .carrossel-item {
+    width: 200px;
+    text-align: center;
+  }
+  
+  .carrossel-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .carrossel-item p {
+    margin-top: 10px;
+    font-weight: bold;
+  }
+  
