@@ -6,10 +6,10 @@
 
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
     background-color: #f4e1d2; /* Cor creme, como papel envelhecido */
     color: #4b3a31; /* Cor marrom escuro, lembrando tinta de antigamente */
-    
+    height: 100%;
   }
   
   /* Cabeçalho */
@@ -22,19 +22,37 @@ body {
     box-shadow: 0px 5px 6px rgba(0, 0, 0, 0.1);
   }
   
-  header .logo h1 {
-    color: #fff; /* Cor clara para contraste */
-    font-family: 'Georgia', serif;
-    font-size: 36px;
+  .logo{
+    display: flex;
+    font-family: "Merriweather", serif;
+    font-size: 20px;
     text-transform: uppercase;
-    letter-spacing: 2px;
+    letter-spacing: 4px;
+    
+    
+  }
+
+  .p1 {
+    color: #fff;
+    background-clip: content-box;
+    background: linear-gradient(0deg, #b8b7b7 2%, #fff 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .p2 {
+    color: #d3a15c;
+    background-clip: content-box;
+    background: linear-gradient(0deg, #6a4e23 2%, #d3a15c 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
   }
   
   /* Menu */
   nav ul {
     list-style: none;
     display: flex;
-    gap: 30px;
+    gap: 35px;
   }
   
   nav a {
@@ -63,7 +81,7 @@ body {
   .livro-item h3, .turma-item h3, .fichamento-item h3, .desafio-item h3 {
     font-size: 20px;
     margin-bottom: 10px;
-    font-family: 'Georgia', serif;
+    font-family: "PT Sans", sans-serif;
     color: #4b3a31;
   }
   
@@ -114,6 +132,8 @@ body {
   }
   
   .livros-lista h2, .turmas-lista h2, .fichamentos-lista h2, .desafios-lista h2, .theme-carrossel {
+    font-family: "Playfair Display", sans-serif;
+    font-size: 23px;
     color: #fff;
     background-color: #5a2d0c;
     border: 2px solid #2d1606;
