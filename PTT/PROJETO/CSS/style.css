@@ -137,5 +137,27 @@ body {
     color: #fff;
     background-color: #5a2d0c;
     box-shadow: black 2px 2px 10px;
-    padding: 1px 10px;
+   
   }
+
+  
+  @media screen and (max-width: 660px) {
+    .menu-desktop{
+      display: none;
+  
+    }
+     .bola
+     {
+       display: none;
+     }
+
+  }
+  
+  @media screen and (max-width: 1247px) {
+    .hhh {
+      display: none;
+      font-size: 20px;
+
+    }
+  }
+

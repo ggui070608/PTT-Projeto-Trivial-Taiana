@@ -17,6 +17,9 @@
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 220px;
+    text-align: center;
+    margin-top: 70px;
   }
   
   .fichamento-item h3 {
