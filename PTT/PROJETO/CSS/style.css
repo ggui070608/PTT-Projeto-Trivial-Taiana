@@ -66,6 +66,25 @@ body {
     color: #d3a15c; /* Cor dourada que remete à luz suave */
   }
   
+  .livros-lista, .desafios-lista, .fichamentos-lista, .turmas-lista {
+    margin-top: 100px;
+  }
+
+  .corp-title, .corp-theme-carrossel{
+    margin-top: 40px;
+    display: grid;
+    justify-content: center;
+  }
+  
+  .corp-title .title, .theme-carrossel, .login-container h2, .cadastro-container h2 {
+    font-family: "Playfair Display", sans-serif;
+    color: #fff;
+    background-color: #5a2d0c;
+    box-shadow: black 2px 2px 10px;
+    padding: 2px 10px;
+   
+  }
+
   .livro-item, .turma-item, .fichamento-item, .desafio-item {
     background-color: #fff8e1; /* Fundo envelhecido */
     padding: 10px;
@@ -74,8 +93,6 @@ body {
     width: 250px;
     text-align: center;
     border: 2px solid #d3a15c; /* Bordas douradas */
-
-    margin-top: 80px;
   }
   
   .livro-item h3, .turma-item h3, .fichamento-item h3, .desafio-item h3 {
@@ -123,29 +140,59 @@ body {
     justify-content: center;
   }
 
-  .livros-lista h2, .turmas-lista h2, .fichamentos-lista h2, .desafios-lista h2 {
-    margin-top: 20px;
-    margin-left: 20px;
-    position: fixed;
-    text-align: center;
-    display: block;
-  }
   
-  .livros-lista h2, .turmas-lista h2, .fichamentos-lista h2, .desafios-lista h2, .theme-carrossel {
-    font-family: "Playfair Display", sans-serif;
-    font-size: 23px;
-    color: #fff;
-    background-color: #5a2d0c;
-    box-shadow: black 2px 2px 10px;
-   
-  }
-
-  
-  @media screen and (max-width: 660px) {
-    .menu-desktop{
-      display: none;
-  
+    /* LOGIN & CADASTRO */
+    .login-container, .cadastro-container {
+      display: grid;
+      justify-content: center;
+      margin-top: 30px;
     }
+  
+    .box {
+      padding: 10px;
+    }
+  
+    .label {
+      font-family: "Playfair Display";
+    }
+  
+    .box input {
+      border-radius: 4px;
+      border: solid black 1px;
+      height: 25px;
+      width: 50vh;
+    }
+  
+    .btn {
+      display: grid;
+      justify-content: center;
+      padding: 15px;
+    }
+  
+    .btn button {
+      font-family: "Koulen";
+      font-size: 18px;
+      color: #fff;
+      background-color: #daa520;
+      border-radius: 4px;
+      border: none;
+      height: 30px;
+      width: 25vh;
+    }
+  
+  @media screen and (max-width: 540px) {
+
+    .logo{
+      font-size: 8px;
+    }
+
+    nav ul {
+      gap: 15px;
+    }
+    .livros-lista h2, .turmas-lista h2, .fichamentos-lista h2, .desafios-lista h2, .theme-carrossel {
+      font-size: 17px;
+    }
+
      .bola
      {
        display: none;
@@ -154,10 +201,5 @@ body {
   }
   
   @media screen and (max-width: 1247px) {
-    .hhh {
-      display: none;
-      font-size: 20px;
 
-    }
   }
-
