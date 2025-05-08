@@ -151,6 +151,8 @@ body {
       display: flex;
       justify-content: center;
       gap: 20px;
+      margin-left: 15vh;
+      margin-right: 15vh;
     }
 
     .box {

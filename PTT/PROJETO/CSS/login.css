@@ -1,3 +1,13 @@
+.link {
+    display: flex;
+    justify-content: center;
+    gap: 4px;
+  }
+
+  .nav a {
+    gap: 30px;
+  }
+
 .link a {
     color: blue;
 }
