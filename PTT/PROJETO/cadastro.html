@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Koulen&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="CSS/style.css" />
+    <link rel="stylesheet" href="CSS/cadastro.css" />
+    <title>PROJETO LITERATURA</title>
+  </head>
+  <body>
+    <!-- Cabeçalho do site -->
+    <header>
+      <div class="logo">
+        <div class="p1">
+          <h1>LITERA</h1>
+        </div>
+
+        <div class="p2">
+          <h1>TURE-SE</h1>
+        </div>
+      </div>
+
+      <div class="menu">
+        <nav>
+          <ul>
+            <li>
+              <a href="login.html"
+                ><svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  fill="currentColor"
+                  class="bi bi-box-arrow-right"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0z"
+                  />
+                  <path
+                    fill-rule="evenodd"
+                    d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708z"
+                  /></svg
+              ></a>
+            </li>
+            <!--HOME ICON-->
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <div class="cadastro-container">
+      <h2>Cadastro</h2>
+      <form>
+
+        <div class="box">
+            <div class="label">
+                <label for="cadastro-email">Email:</label>
+            </div>
+            <input type="email" id="cadastro-email" name="email" required />
+        </div>
+        
+        <div class="box">
+            <div class="label">
+                <label for="cadastro-nome">Nome:</label>
+            </div>
+            <input type="text" id="cadastro-nome" name="nome" required />
+        </div>
+
+        <div class="box">
+            <div class="label">
+                <label for="cadastro-senha">Senha:</label>
+            </div>
+            <input type="password" id="cadastro-senha" name="senha" required />
+        </div>
+
+        <div class="box">
+            <div class="label">
+                <label for="cadastro-confirmar-senha">Confirmar Senha:</label>
+            </div>
+            <input type="password" id="cadastro-confirmar" name="confirmar-senha" required />
+        </div>
+
+        <p id="mensagem-erro" class="erro"></p>
+
+        <div class="btn">
+            <button class="button" type="submit">Cadastrar</button>
+        </div>
+        
+
+        <p class="link">
+          Já tem uma conta? <a href="login.html">Faça login</a>
+        </p>
+      </form>
+    </div>
+
+    <script src="JS/validacao-cadastro.js"></script>
+
+  </body>
+</html>

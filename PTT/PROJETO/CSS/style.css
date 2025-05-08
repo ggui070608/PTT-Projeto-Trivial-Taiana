@@ -124,14 +124,14 @@ body {
     justify-content: center;
   }
 
-  .livros-lista h2, .turmas-lista h2, .fichamentos-lista h2, .desafios-lista h2{
+  .livros-lista h2, .turmas-lista h2, .fichamentos-lista h2, .desafios-lista h2 {
     margin-top: 20px;
     margin-left: 20px;
     position: fixed;
     text-align: center;
   }
   
-  .livros-lista h2, .turmas-lista h2, .fichamentos-lista h2, .desafios-lista h2, .theme-carrossel {
+  .livros-lista h2, .turmas-lista h2, .fichamentos-lista h2, .desafios-lista h2, .theme-carrossel , .cadastro-container h2, .login-container h2 {
     font-family: "Playfair Display", sans-serif;
     font-size: 23px;
     color: #fff;
@@ -139,4 +139,44 @@ body {
     border: 2px solid #2d1606;
     box-shadow: black 2px 2px 10px;
     padding: 1px 10px;
+  }
+
+
+  /* LOGIN & CADASTRO */
+  .login-container, .cadastro-container {
+    display: grid;
+    justify-content: center;
+    margin-top: 30px;
+  }
+
+  .box {
+    padding: 10px;
+  }
+
+  .label {
+    font-family: "Playfair Display";
+  }
+
+  .box input {
+    border-radius: 4px;
+    border: solid black 1px;
+    height: 25px;
+    width: 50vh;
+  }
+
+  .btn {
+    display: grid;
+    justify-content: center;
+    padding: 15px;
+  }
+
+  .btn button {
+    font-family: "Koulen";
+    font-size: 18px;
+    color: #fff;
+    background-color: #daa520;
+    border-radius: 4px;
+    border: none;
+    height: 30px;
+    width: 25vh;
   }
