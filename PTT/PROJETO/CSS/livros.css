@@ -1,45 +1,132 @@
-/* Página Livros */
-*{
+/* Página Livros */ 
+* {
   margin: 0%;
   padding: 0%;
 }
 
-
+/* Lista de Livros */
 .livros-lista {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 40px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+}
+
+.livro-item {
+  background-color: #FFF;
+  padding: 12px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 220px;
+  text-align: center;
+}
+
+.livro-item h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.livro-item p {
+  color: #666;
+}
+
+.livro-item a {
+  color: #FF6347;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.livro-item a:hover {
+  text-decoration: underline;
+}
+
+/* Estilos do menu mobile */
+.menu-mobile-button {
+  display: none; /* Por padrão, oculto, será visível em telas pequenas */
+  cursor: pointer;
+  position: fixed;
+  top: 20px;
+  left: 20px; /* Alinhado ao canto superior esquerdo */
+  z-index: 10000; /* Garante que o botão esteja sobre os outros elementos */
+}
+
+.menu-mobile-button .bar {
+  width: 30px;
+  height: 4px;
+  background-color: #FFF;
+  margin: 6px 0;
+  transition: 0.4s; /* Transição suave para o efeito de rotação */
+}
+
+/* Menu Mobile */
+.menu-mobile {
+  background-color: #333; /* Alterei para uma cor mais suave */
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0; /* Colocando o menu do lado esquerdo */
+  z-index: 9999;
+  width: 70%;
+  transform: translateX(-100%); /* Esconde o menu por padrão à esquerda */
+  transition: transform 0.3s ease-in-out; /* Animação suave */
+}
+
+.menu-mobile.open {
+  transform: translateX(0); /* Exibe o menu quando a classe "open" for adicionada */
+}
+
+.menu-mobile nav ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 60px; /* Espaço para o título */
+}
+
+.menu-mobile nav ul li {
+  text-align: left; /* Alinha os links à esquerda */
+  margin-bottom: 20px;
+}
+
+.menu-mobile nav ul li a {
+  color: #fff;
+  font-size: 20px;
+  font-weight: 300;
+  padding: 20px 4%;
+  display: block;
+  text-decoration: none;
+}
+
+.menu-mobile nav ul li a:hover {
+  color: #FF6347;
+}
+
+/* Media Queries para Responsividade */
+@media (max-width: 768px) {
+  /* Exibe o botão de menu para dispositivos móveis */
+  .menu-mobile-button {
+    display: block;
   }
 
-  
+  /* Modifica o layout da lista de livros para se ajustar ao tamanho da tela */
+  .livros-lista {
+    flex-direction: column;
+    gap: 20px;
+  }
+
   .livro-item {
-    background-color: #FFF;
-    padding: 12px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 220px;
-    text-align: center;
+    width: 100%;
+    max-width: 320px;
   }
-  
-  .livro-item h3 {
+}
+
+@media (max-width: 480px) {
+  /* Menu mobile com ajuste para telas pequenas */
+  .menu-mobile nav ul li a {
     font-size: 20px;
-    margin-bottom: 10px;
-    color: #333;
-  }
-  
-  .livro-item p {
-    color: #666;
-  }
-  
-  .livro-item a {
-    color: #FF6347;
-    font-weight: bold;
-    text-decoration: none;
-  }
-  
-  .livro-item a:hover {
-    text-decoration: underline;
   }
 
-  
+  /* Ajuste do título de livros para se adequar melhor */
+  .livro-item h3 {
+    font-size: 18px;
+  }
+}
