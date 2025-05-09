@@ -224,6 +224,61 @@ a:hover {
   margin-top: 8px;
 }
 
+/* Menu Mobile Button */
+.menu-mobile-button {
+  display: none;
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  cursor: pointer;
+  z-index: 10001;
+}
+
+.menu-mobile-button .bar {
+  width: 30px;
+  height: 4px;
+  background-color: #fff;
+  margin: 6px 0;
+  transition: 0.4s;
+}
+
+/* Menu Mobile */
+.menu-mobile {
+  background-color: #333;
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 70%;
+  height: 100%;
+  transform: translateX(100%);
+  transition: transform 0.3s ease-in-out;
+  z-index: 10000;
+  padding: 20px;
+}
+
+.menu-mobile.open {
+  transform: translateX(0);
+}
+
+.menu-mobile ul {
+  list-style: none;
+  margin-top: 60px;
+}
+
+.menu-mobile ul li {
+  margin-bottom: 20px;
+}
+
+.menu-mobile ul li a {
+  color: white;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+}
+
+
 @media screen and (max-width: 540px) {
 
   .logo {
@@ -248,4 +303,33 @@ a:hover {
 
 }
 
-@media screen and (max-width: 1247px) {}
+/* Responsividade */
+@media (max-width: 768px) {
+  .menu-mobile-button {
+    display: block;
+  }
+
+  .menu-desktop {
+    display: none;
+  }
+
+  .livros-lista {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .livro-item {
+    width: 90%;
+    max-width: 320px;
+  }
+}
+
+@media (max-width: 480px) {
+  .menu-mobile ul li a {
+    font-size: 20px;
+  }
+
+  .livro-item h3 {
+    font-size: 18px;
+  }
+}

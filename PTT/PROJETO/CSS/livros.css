@@ -1,15 +1,29 @@
-/* Página Livros */
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
-/* Lista de Livros */
+body {
+  font-family: 'Merriweather', serif;
+  background-color: #f6dfcd;
+}
+
+
+
+.menu-desktop ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+/* Livros */
 .livros-lista {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 40px;
+  margin-top: 20px;
 }
 
 .livro-item {
@@ -41,92 +55,3 @@
   text-decoration: underline;
 }
 
-/* Botão do menu mobile */
-.menu-mobile-button {
-  display: none;
-  cursor: pointer;
-  position: fixed;
-  top: 20px;
-  right: 20px; /* <-- Corrigido para o lado direito */
-  z-index: 10000;
-}
-
-.menu-mobile-button .bar {
-  width: 30px;
-  height: 4px;
-  background-color: #FFF;
-  margin: 6px 0;
-  transition: 0.4s;
-}
-
-/* Menu Mobile do lado direito */
-.menu-mobile {
-  background-color: #333;
-  height: 100vh;
-  position: fixed;
-  top: 0;
-  right: 0; /* <-- Corrigido */
-  z-index: 9999;
-  width: 70%;
-  transform: translateX(100%); /* <-- Corrigido */
-  transition: transform 0.3s ease-in-out;
-}
-
-.menu-mobile.open {
-  transform: translateX(0);
-}
-
-.menu-mobile ul {
-  list-style: none;
-  padding: 0;
-  margin-top: 60px;
-}
-
-.menu-mobile ul li {
-  text-align: left;
-  margin-bottom: 20px;
-}
-
-.menu-mobile ul li a {
-  color: #fff;
-  font-size: 20px;
-  font-weight: 300;
-  padding: 20px 4%;
-  display: block;
-  text-decoration: none;
-}
-
-.menu-mobile ul li a:hover {
-  color: #FF6347;
-}
-
-/* Media Queries para Responsividade */
-@media (max-width: 768px) {
-  .menu-mobile-button {
-    display: block;
-  }
-
-  .menu-desktop {
-    display: none;
-  }
-
-  .livros-lista {
-    flex-direction: column;
-    gap: 20px;
-  }
-
-  .livro-item {
-    width: 100%;
-    max-width: 320px;
-  }
-}
-
-@media (max-width: 480px) {
-  .menu-mobile ul li a {
-    font-size: 20px;
-  }
-
-  .livro-item h3 {
-    font-size: 18px;
-  }
-}
