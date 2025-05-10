@@ -251,6 +251,12 @@ a:hover {
   border: 2px solid pink;
 }
 
+.span-required {
+  color: #e63636;
+  font-size: 14px;
+  margin: 3px 0px 0 12px;
+}
+
 .btn {
   display: flex;
   justify-content: center;

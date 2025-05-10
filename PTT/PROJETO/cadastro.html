@@ -145,11 +145,11 @@
 
         <div class="box">
           <div>
-            <input type="email" placeholder="Insira um Email" class="inputs required"/>
+            <input type="email" placeholder="Insira um Email" class="inputs required" oninput="emailValidate()"/>
           </div>
 
           <div>
-            <span class="span-required">Email inválido</span>
+            <span class="span-required">Digite um Email válido</span>
           </div>
         </div>
         
@@ -165,7 +165,7 @@
 
         <div class="box">
           <div>
-            <input type="password" placeholder="Insira uma Senha" class="inputs required"/>
+            <input type="password" placeholder="Insira uma Senha" class="inputs required" oninput="MainPasswordValidate()"/>
           </div>
 
           <div>
@@ -175,11 +175,11 @@
 
         <div class="box">
           <div>
-            <input type="password" placeholder="Confirme sua Senha" class="inputs required"/>
+            <input type="password" placeholder="Confirme sua Senha" class="inputs required" oninput="comparePassword()"/>
           </div>
 
           <div>
-            <span class="span-required">Senha não compatível</span>
+            <span class="span-required">Senhas não são compatíveis</span>
           </div>
         </div>
 
@@ -195,6 +195,7 @@
     </div>
 
 
+    <!--JS-->
     <script>
       const form = document.getElementById('form');
       const campos = document.querySelectorAll('.required')
@@ -202,9 +203,39 @@
       const emailRegex = /^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/;
 
 
+      form.addEventListener('submit', (event) => 
+      {
+        event.preventDefault();
+        emailValidate();
+        nameValidate();
+        MainPasswordValidate();
+        comparePassword();
+      }
+      );
+
+
       function setError(index)
       {
         campos[index].style.border = '2px solid #e63636';
+        spans[index].style.display = 'block';
+      }
+
+      function removeError(index)
+      {
+        campos[index].style.border = '';
+        spans[index].style.display = 'none';
+      }
+
+      function emailValidate()
+      {
+        if(!emailRegex.test(campos[0].value))
+        {
+          setError(0);
+        }
+        else
+        {
+           removeError(0);
+        }
       }
 
       function nameValidate()
@@ -215,9 +246,35 @@
         }
         else
         {
-          console.log('VALIDADO NOME');
+          removeError(1);
         }
       }
+
+      function MainPasswordValidate()
+      {
+        if(campos[2].value.length < 6)
+        {
+          setError(2);
+        }
+        else
+        {
+          removeError(2);
+          comparePassword();
+        }
+      }
+
+      function comparePassword()
+      {
+        if(campos[2].value == campos[3].value && campos[3].value.length >= 6)
+        {
+          removeError(3);
+        }
+        else
+        {
+          setError(3);
+        }
+      }
+
     </script>
 
   </body>
