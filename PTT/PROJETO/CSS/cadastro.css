@@ -1,3 +1,7 @@
+:root {
+  --color-red: #e63636;
+}
+
 .link {
   display: flex;
   justify-content: center;
@@ -7,13 +11,4 @@
 .link a {
   color: blue;
 }
-
-.erro {
-    color: red;
-    font-size: 12px;
-    margin-top: 5px;
-    margin-bottom: 10px;
-    display: none;
-  }
-  
   

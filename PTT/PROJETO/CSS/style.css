@@ -55,6 +55,7 @@ body {
   /* Cor creme, como papel envelhecido */
   color: #4b3a31;
   /* Cor marrom escuro, lembrando tinta de antigamente */
+  height: 100vh;
 }
 
 /* Cabeçalho */
@@ -62,7 +63,7 @@ header {
   background-color: #5a2d0c;
   /* Cor marrom escura */
   padding: 20px;
-  display: flex;
+  display: grid;
   justify-content: space-between;
   align-items: center;
   box-shadow: 0px 5px 6px rgba(0, 0, 0, 0.1);
@@ -121,9 +122,7 @@ nav a:hover {
 }
 
 .corp-title,
-.corp-theme-carrossel,
-.login-corp,
-.cadastro-corp {
+.corp-theme-carrossel{
   margin-top: 40px;
   display: grid;
   justify-content: center;
@@ -194,6 +193,7 @@ footer {
   width: 100%;
   z-index: 10;
   padding: 10px;
+  font-size: 12px;
 }
 
 /* Estilo do link */
@@ -214,14 +214,16 @@ a:hover {
 /* LOGIN & CADASTRO */
 .login-container,
 .cadastro-container {
-  backdrop-filter: blur;
-  display: grid;
-  justify-content: center;
+  align-items: center;
   background-color: #f4e1d2;
-  padding: 30px;
-  margin: 30px 35vw;
   border-radius: 50px;
   box-shadow: rgb(117, 117, 117) 4px 4px 20px;
+  display: flex;
+  flex-direction: column;
+  margin: 3rem auto;
+  overflow: auto;
+  padding: 2rem;
+  width: 60vh;
   z-index: 1;
 }
 
@@ -230,28 +232,21 @@ a:hover {
   display: flex;
   justify-content: center;
   gap: 10px;
-  margin: 0 7vw;
 }
 
 .box {
   margin-top: 15px;
-  padding: 7px;
-}
-
-.label {
-  margin-left: 15px;
-  font-family: "Koulen";
 }
 
 .box input {
   border-radius: 20px;
   border: solid black 1px;
   height: 30px;
-  width: 25vw;
+  width: 50vh;
 }
 
 .btn {
-  display: grid;
+  display: flex;
   justify-content: center;
   padding: 15px;
 }
@@ -264,8 +259,7 @@ a:hover {
   border-radius: 20px;
   border: none;
   height: 30px;
-  width: 15vw;
-  margin-top: 8px;
+  width: 20vh;
 }
 
 /* Menu Mobile Button */
@@ -288,11 +282,11 @@ a:hover {
 
 /* Menu Mobile */
 .menu-mobile {
-  background-color: #333;
+  background-color: #5a2d0c;
   position: fixed;
   top: 0;
   right: 0;
-  width: 70%;
+  width: 30%;
   height: 100%;
   transform: translateX(100%);
   transition: transform 0.3s ease-in-out;
@@ -323,32 +317,9 @@ a:hover {
 }
 
 
-@media screen and (max-width: 540px) {
-
-  .logo {
-    font-size: 8px;
-  }
-
-  nav ul {
-    gap: 15px;
-  }
-
-  .livros-lista h2,
-  .turmas-lista h2,
-  .fichamentos-lista h2,
-  .desafios-lista h2,
-  .theme-carrossel {
-    font-size: 17px;
-  }
-
-  .bola {
-    display: none;
-  }
-
-}
-
 /* Responsividade */
 @media (max-width: 768px) {
+
   .menu-mobile-button {
     display: block;
   }
@@ -362,18 +333,104 @@ a:hover {
     align-items: center;
   }
 
-  .livro-item {
-    width: 90%;
-    max-width: 320px;
+  .theme-carrossel {
+    font-size: 14px;
   }
+
+  footer {
+    font-size: 10px;
+  }
+
+  .login-container,
+.cadastro-container {
+  width: 40vh;
+}
+
+.box input {
+  height: 25px;
+  width: 38vh;
+}
+
+.btn {
+  padding: 10px;
+}
+
+.btn button {
+  font-size: 14px;
+  height: 27px;
+  width: 18vh;
+}
+
+}
+
+@media screen and (max-width: 540px) {
+
+  .logo {
+    font-size: 14px;
+  }
+
+  nav ul {
+    gap: 15px;
+  }
+
+  .title {
+    font-size: 24px;
+  }
+
+  .theme-carrossel {
+    font-size: 12px;
+  }
+
+  .menu-mobile ul li a {
+    font-size: 15px;
+  }
+
+  .bola {
+    display: none;
+  }
+
 }
 
 @media (max-width: 480px) {
-  .menu-mobile ul li a {
-    font-size: 20px;
+
+  .logo {
+    font-size: 10px;
   }
 
-  .livro-item h3 {
+  nav ul {
+    gap: 10px;
+  }
+
+  .title {
     font-size: 18px;
+  }
+
+  .theme-carrossel {
+    font-size: 8px;
+  }
+
+  .menu-mobile ul li a {
+    font-size: 13px;
+  }  
+
+
+  .login-container,
+  .cadastro-container {
+    width: 37vh;
+  }
+  
+  .box input {
+    height: 22px;
+    width: 36vh;
+  }
+  
+  .btn {
+    padding: 10px;
+  }
+  
+  .btn button {
+    font-size: 14px;
+    height: 25px;
+    width: 16vh;
   }
 }
