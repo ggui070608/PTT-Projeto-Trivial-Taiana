@@ -10,12 +10,9 @@
 
 .link a {
     color: blue;
+    transition: .2s;
 }
 
-.erro {
-    color: red;
-    font-size: 12px;
-    margin-top: 5px;
-    margin-bottom: 10px;
-    display: none;
-  }
+.link a:hover {
+  color: rgb(0, 0, 174);
+}

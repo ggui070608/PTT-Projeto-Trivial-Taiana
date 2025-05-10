@@ -10,5 +10,10 @@
 
 .link a {
   color: blue;
+  transition: .2s;
+}
+
+.link a:hover {
+  color: rgb(0, 0, 174);
 }
   

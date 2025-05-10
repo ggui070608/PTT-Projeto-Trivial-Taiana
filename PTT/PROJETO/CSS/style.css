@@ -238,11 +238,17 @@ a:hover {
   margin-top: 15px;
 }
 
-.box input {
+.inputs {
   border-radius: 20px;
-  border: solid black 1px;
+  border: 2px solid transparent;
+  outline: none;
   height: 30px;
   width: 50vh;
+  transition: .3s;
+}
+
+.inputs:focus{
+  border: 2px solid pink;
 }
 
 .btn {
@@ -255,11 +261,20 @@ a:hover {
   font-family: "Koulen";
   font-size: 18px;
   color: #fff;
-  background-color: #daa520;
+  background-color: #e9b124;
   border-radius: 20px;
   border: none;
   height: 30px;
   width: 20vh;
+  transition: .2s;
+}
+
+.btn button:hover {
+  background-color: #f3ba2b;
+}
+
+.span-required {
+  display: none;
 }
 
 /* Menu Mobile Button */
