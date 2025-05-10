@@ -10,8 +10,10 @@
   align-items: flex-start;
   gap: 40px;
   flex: 1;
-  margin-top: -50px;   /* sobe mais */
-  margin-right: 30px;  /* move um pouco à esquerda */
+  margin-top: -50px;
+  /* sobe mais */
+  margin-right: 30px;
+  /* move um pouco à esquerda */
 }
 
 
@@ -122,7 +124,7 @@ nav a:hover {
 }
 
 .corp-title,
-.corp-theme-carrossel{
+.corp-theme-carrossel {
   margin-top: 40px;
   display: grid;
   justify-content: center;
@@ -240,14 +242,14 @@ a:hover {
 
 .inputs {
   border-radius: 20px;
-  border: 2px solid transparent;
+  border: 2px solid #f4e1d2;
   outline: none;
   height: 30px;
   width: 50vh;
   transition: .3s;
 }
 
-.inputs:focus{
+.inputs:focus {
   border: 2px solid pink;
 }
 
@@ -330,6 +332,7 @@ a:hover {
 
 .menu-mobile ul li a {
   color: white;
+  font-family: 'Playfair Display';
   font-size: 20px;
   display: flex;
   align-items: center;
@@ -363,24 +366,24 @@ a:hover {
   }
 
   .login-container,
-.cadastro-container {
-  width: 40vh;
-}
+  .cadastro-container {
+    width: 40vh;
+  }
 
-.box input {
-  height: 25px;
-  width: 38vh;
-}
+  .box input {
+    height: 25px;
+    width: 38vh;
+  }
 
-.btn {
-  padding: 10px;
-}
+  .btn {
+    padding: 10px;
+  }
 
-.btn button {
-  font-size: 14px;
-  height: 27px;
-  width: 18vh;
-}
+  .btn button {
+    font-size: 14px;
+    height: 27px;
+    width: 18vh;
+  }
 
 }
 
@@ -432,23 +435,23 @@ a:hover {
 
   .menu-mobile ul li a {
     font-size: 13px;
-  }  
+  }
 
 
   .login-container,
   .cadastro-container {
     width: 37vh;
   }
-  
+
   .box input {
     height: 22px;
     width: 36vh;
   }
-  
+
   .btn {
     padding: 10px;
   }
-  
+
   .btn button {
     font-size: 14px;
     height: 25px;

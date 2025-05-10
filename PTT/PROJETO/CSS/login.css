@@ -1,16 +1,16 @@
 .link {
-    display: flex;
-    justify-content: center;
-    gap: 4px;
-  }
+  display: flex;
+  justify-content: center;
+  gap: 4px;
+}
 
-  .nav a {
-    gap: 30px;
-  }
+.nav a {
+  gap: 30px;
+}
 
 .link a {
-    color: blue;
-    transition: .2s;
+  color: blue;
+  transition: .2s;
 }
 
 .link a:hover {
