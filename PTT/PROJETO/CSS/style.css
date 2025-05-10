@@ -4,6 +4,8 @@
   padding: 0%;
 }
 
+
+/* menu-desktop */
 .menu-desktop {
   display: flex;
   justify-content: flex-end;
@@ -46,9 +48,6 @@
 .menu-desktop li a:hover svg {
   fill: #d3a15c;
 }
-
-
-
 
 
 body {
