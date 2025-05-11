@@ -195,7 +195,7 @@ footer {
   width: 100%;
   z-index: 10;
   padding: 10px;
-  font-size: 12px;
+  font-size: 15px;
 }
 
 /* Estilo do link */
@@ -218,14 +218,15 @@ a:hover {
 .cadastro-container {
   align-items: center;
   background-color: #f4e1d2;
-  border-radius: 50px;
+  filter: opacity(10px);
+  border-radius: 2rem;
   box-shadow: rgb(117, 117, 117) 4px 4px 20px;
   display: flex;
   flex-direction: column;
-  margin: 3rem auto;
+  margin: 5rem auto;
   overflow: auto;
   padding: 2rem;
-  width: 60vh;
+  width: 50vh;
   z-index: 1;
 }
 
@@ -237,20 +238,20 @@ a:hover {
 }
 
 .box {
-  margin-top: 15px;
+  margin: 32px 0;
 }
-
 .inputs {
   border-radius: 20px;
   border: 2px solid #f4e1d2;
+  box-sizing: border-box;
   outline: none;
-  height: 30px;
-  width: 50vh;
+  height: 40px;
+  width: 45vh;
   transition: .3s;
 }
 
 .inputs:focus {
-  border: 2px solid pink;
+  border: 2px solid green;
 }
 
 .span-required {
@@ -344,6 +345,10 @@ a:hover {
 /* Responsividade */
 @media (max-width: 768px) {
 
+  /*CARROSSEL*/ 
+
+
+  /*MENU*/
   .menu-mobile-button {
     display: block;
   }
@@ -352,11 +357,13 @@ a:hover {
     display: none;
   }
 
+  /*LIVROS*/
   .livros-lista {
     flex-direction: column;
     align-items: center;
   }
 
+  /*TAMANHO TEXTO & BACK*/
   .theme-carrossel {
     font-size: 14px;
   }
@@ -370,9 +377,12 @@ a:hover {
     width: 40vh;
   }
 
+  .box {
+    margin: 24px 0;
+  }
   .box input {
-    height: 25px;
-    width: 38vh;
+    height: 30px;
+    width: 35vh;
   }
 
   .btn {
@@ -380,11 +390,11 @@ a:hover {
   }
 
   .btn button {
+    margin-top: -5px;
     font-size: 14px;
-    height: 27px;
-    width: 18vh;
+    height: 25px;
+    width: 17vh;
   }
-
 }
 
 @media screen and (max-width: 540px) {
@@ -440,12 +450,16 @@ a:hover {
 
   .login-container,
   .cadastro-container {
-    width: 37vh;
+    width: 33vh;
+  }
+
+  .box {
+    margin: 16px 0;
   }
 
   .box input {
-    height: 22px;
-    width: 36vh;
+    height: 25px;
+    width: 28vh;
   }
 
   .btn {
@@ -453,8 +467,9 @@ a:hover {
   }
 
   .btn button {
-    font-size: 14px;
-    height: 25px;
-    width: 16vh;
+    margin-top: -10px;
+    font-size: 10px;
+    height: 20px;
+    width: 15vh;
   }
 }
