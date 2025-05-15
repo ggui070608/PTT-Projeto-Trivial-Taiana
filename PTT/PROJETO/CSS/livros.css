@@ -24,13 +24,16 @@ body {
   justify-content: center;
   gap: 40px;
   margin-top: 20px;
+  
 }
 
 .livro-item {
+  position: relative;
   background-color: #FFF;
   padding: 12px;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  height: 18rem;
   width: 220px;
   text-align: center;
 }
@@ -46,6 +49,7 @@ body {
 }
 
 .livro-item a {
+  
   color: #FF6347;
   font-weight: bold;
   text-decoration: none;
@@ -75,10 +79,32 @@ body {
   transition: .2s;
 }
 
-.btnx button:hover {
+.btnZ button:hover {
   background-color: #f3ba2b;
 }
 
 .nome-autor{
   font-size: 12px;
+}
+
+.btnZ button {
+  margin-left: 0.7rem;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  margin-bottom: 1rem;
+  margin-top: 10px;
+  font-family: "Koulen";
+  font-size: 18px;
+  color: #fff;
+  background-color: #e9b124;
+  border-radius: 20px;
+  border: none;
+  height: 30px;
+  width: 20vh;
+  transition: .2s;
+}
+
+.btnZ button:hover {
+  background-color: #f3ba2b;
 }
