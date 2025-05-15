@@ -78,3 +78,7 @@ body {
 .btnx button:hover {
   background-color: #f3ba2b;
 }
+
+.nome-autor{
+  font-size: 12px;
+}
