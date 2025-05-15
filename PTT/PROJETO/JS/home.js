@@ -7,8 +7,8 @@ var TrandingSlider = new Swiper('.tranding-slider', {
     coverflowEffect: {
         rotate: 0,
         stretch: 0,
-        depth: 100,
-        modifier: 5,
+        depth: 120,
+        modifier: 3,
     },
     pagination: {
         el: '.swiper-pagination',
