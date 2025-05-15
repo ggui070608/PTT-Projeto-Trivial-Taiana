@@ -117,11 +117,13 @@ nav a:hover {
 }
 
 .livros-lista,
-.fichamentos-lista{
+.fichamentos-lista {
   margin-top: 100px;
 }
 
-.turmas-lista,.desafios-lista{
+.alunos-lista,
+.turmas-lista,
+.desafios-lista {
   margin-top: 50px;
 }
 
@@ -242,6 +244,7 @@ a:hover {
 .box {
   margin: 32px 0;
 }
+
 .inputs {
   border-radius: 20px;
   border: 2px solid #f4e1d2;
@@ -347,7 +350,7 @@ a:hover {
 /* Responsividade */
 @media (max-width: 768px) {
 
-  /*CARROSSEL*/ 
+  /*CARROSSEL*/
 
 
   /*MENU*/
@@ -382,6 +385,7 @@ a:hover {
   .box {
     margin: 24px 0;
   }
+
   .box input {
     height: 30px;
     width: 35vh;
