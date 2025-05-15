@@ -36,3 +36,28 @@
 .turma-item a:hover {
   text-decoration: underline;
 }
+
+
+.btnx {
+ position: fixed;
+  bottom: 0;
+  width: 100%;
+  z-index: 200;
+  padding: 50px;
+}
+
+.btnx button {
+  font-family: "Koulen";
+  font-size: 18px;
+  color: #fff;
+  background-color: #e9b124;
+  border-radius: 20px;
+  border: none;
+  height: 30px;
+  width: 20vh;
+  transition: .2s;
+}
+
+.btnx button:hover {
+  background-color: #f3ba2b;
+}

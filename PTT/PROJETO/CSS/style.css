@@ -117,10 +117,12 @@ nav a:hover {
 }
 
 .livros-lista,
-.desafios-lista,
-.fichamentos-lista,
-.turmas-lista {
+.fichamentos-lista{
   margin-top: 100px;
+}
+
+.turmas-lista,.desafios-lista{
+  margin-top: 50px;
 }
 
 .corp-title,
