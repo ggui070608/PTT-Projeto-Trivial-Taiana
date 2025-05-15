@@ -261,7 +261,7 @@ a:hover {
 }
 
 .inputs {
-  border-radius: 20px;
+  border-radius: 10px;
   border: 2px solid #f4e1d2;
   box-sizing: border-box;
   outline: none;
@@ -271,7 +271,7 @@ a:hover {
 }
 
 .inputs:focus {
-  border: 2px solid green;
+  border: 2px solid pink;
 }
 
 .span-required {
@@ -291,7 +291,7 @@ a:hover {
   font-size: 18px;
   color: #fff;
   background-color: #e9b124;
-  border-radius: 20px;
+  border-radius: 10px;
   border: none;
   height: 30px;
   width: 20vh;
@@ -299,6 +299,7 @@ a:hover {
 }
 
 .btn button:hover {
+  transform: translateY(-5px);
   background-color: #f3ba2b;
 }
 
