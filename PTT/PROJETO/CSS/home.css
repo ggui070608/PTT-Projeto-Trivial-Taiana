@@ -74,7 +74,7 @@ body {
 
 .tranding-slide {
   height: 37rem;
-  width: 32rem;
+  width: 25rem;
   position: relative;
 }
 
@@ -88,22 +88,29 @@ body {
 .tranding-slide-content {
   position: relative;
   left: 0;
-  top: 2rem;
+  top: 1.6rem;
   right: 0;
   bottom: 0;
-}
-
-.book-name {
-    font-size: 20px;
-    font-family: 'Koulen';
-    color: black;
 }
 
 .tranding-slide-content-bottom {
   position: absolute;
   bottom: 2rem;
-  left: 2rem;
+  left: 0rem;
   color: #fff;
+
+  background: linear-gradient(to top, black 0%, rgba(255, 255, 255, 0) 100%);
+  border-bottom-left-radius: 2rem;
+  border-bottom-right-radius: 2rem;
+  z-index: 5;
+  width: 100%;
+}
+
+.book-name {
+  margin-left: 1rem;
+  margin-bottom: -0.5rem;
+  font-size: 20px;
+  font-family: 'Koulen';
 }
 
 .swiper-slide-shadow-left,
