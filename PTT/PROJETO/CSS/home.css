@@ -48,19 +48,13 @@ body {
 /* SLIDES */
 
 .container {
-  width: 55%;
-  padding: 2rem 1rem;
-  margin: 3rem auto;
+  width: 60%;
+  padding: 3rem 3.84rem;
+  margin: 1rem auto;
 
 }
 
-.title-carrossel-corp {
-  letter-spacing: 2px;
-  color: #fff;
-  background-color: #5a2d0c;
-  box-shadow: black 2px 2px 10px;
-  padding: 2px 10px;
-}
+
 
 #tranding {
   padding: 4rem 0;
@@ -131,6 +125,8 @@ body {
   transform: translateX(-58%) !important;
 }
 
+
+
 .slider-arrow {
   background: #fff;
   width: 4rem;
@@ -161,17 +157,8 @@ body {
 }
 
 .swiper-wrapper {
-  gap: 0.45rem;
-}
-
-.swiper::before,
-.swiper::after {
-  background: linear-gradient(to left, #f4e1d2 0%, rgba(255, 255, 255, 0) 100%);
-  content: '';
-  height: 100%;
-  position: absolute;
-  width: 15%;
-  z-index: 3;
+  gap: 0.08rem;
+ 
 }
 
 .swiper::before {
@@ -195,4 +182,34 @@ footer {
   z-index: 10;
   padding: 10px;
   font-size: 15px;
+}
+
+
+@media (max-width: 768px) {
+
+
+
+  
+}
+
+@media screen and (max-width: 540px) {
+
+
+}
+
+@media (max-width: 480px) {
+
+ .swiper-button-next {
+  margin-left: 60px;
+  right: 90% !important;
+  transform: translateX(-58%) !important;
+}
+
+.swiper-button-prev{
+  margin-right: 50px;
+  left: 12% !important;
+  transform: translateX(-58%) !important;
+}
+
+ 
 }

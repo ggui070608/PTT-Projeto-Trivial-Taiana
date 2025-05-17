@@ -40,6 +40,7 @@
 
 .menu-desktop svg {
   fill: #fff;
+  margin-top: 5px;
   transition: fill 0.3s;
 }
 
@@ -53,7 +54,9 @@
 
 body {
 
-  background-color: #f4e1d2;
+  background-image: url(/PTT/PROJETO/IMG/fundo-litera.jpeg);
+  background-repeat: repeat;
+  background-size: cover;
   /* Cor creme, como papel envelhecido */
   color: #4b3a31;
   /* Cor marrom escuro, lembrando tinta de antigamente */
@@ -68,33 +71,12 @@ header {
   display: grid;
   justify-content: space-between;
   align-items: center;
-  box-shadow: 0px 5px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 3px 7px black;
 }
 
 .logo {
   display: flex;
-  font-family: "Merriweather", serif;
-  font-size: 20px;
-  text-transform: uppercase;
-  letter-spacing: 4px;
-
-
-}
-
-.p1 {
-  color: #fff;
-  background-clip: content-box;
-  background: linear-gradient(0deg, #b8b7b7 2%, #fff 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.p2 {
-  color: #d3a15c;
-  background-clip: content-box;
-  background: linear-gradient(0deg, #6a4e23 2%, #d3a15c 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  margin-left: 10px;
 }
 
 /* Menu */
@@ -221,7 +203,7 @@ a:hover {
 .login-container,
 .cadastro-container {
   align-items: center;
-  background-color: #f4e1d2;
+  background-color: #F5EAC4;
   filter: opacity(10px);
   border-radius: 2rem;
   box-shadow: rgb(117, 117, 117) 4px 4px 20px;
@@ -236,7 +218,7 @@ a:hover {
 
 .fichar-container{
   align-items: center;
-  background-color: #f4e1d2;
+  background-color: #F5EAC4;
   filter: opacity(10px);
   border-radius: 2rem;
   box-shadow: rgb(117, 117, 117) 4px 4px 20px;
@@ -422,7 +404,9 @@ a:hover {
 @media screen and (max-width: 540px) {
 
   .logo {
-    font-size: 14px;
+    width: 150px;
+    height: 5px;
+    margin-bottom: 20px;
   }
 
   nav ul {
