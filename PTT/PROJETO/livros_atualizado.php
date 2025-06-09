@@ -9,18 +9,49 @@ if ((!isset($_SESSION['email']) == true) and (!isset($_SESSION['senha']) == true
   unset($_SESSION['senha']);
   // header('Location: login.php');
 }
+
 $logado = $_SESSION['email'];
 
-$sql = "SELECT * FROM fichamento";
 
-
+$sql = "SELECT * FROM livro";
 
 $result = $conexao->query($sql);
 
 
-$categoria_id = $_POST['categoria_id'];
+
+
+/* if (isset($_POST['submit'])) {
+
+$livro = $_POST['livro'];
+$autor = $_POST['autor'];
+
+
+
+ header('Location: testandocomunicacao.php');
+print_r($row("livro")); 
+
+   $email = $_POST['email'];
+  $nome = $_POST['name'];
+  $senha = $_POST['senha'];
+  $id = $_POST['turma'];
+
+
+
+
+  include_once('config.php');
+
+  
+  $result = mysqli_query($conexao, "INSERT INTO aluno(email,nome,senha,fk_turma) values ('$email','$nome','$senha','$id')");
+ header('Location: login.php'); 
+} */
+
 
 //  print_r($result);
+
+
+
+
+
 ?>
 
 <!DOCTYPE html>
@@ -37,8 +68,7 @@ $categoria_id = $_POST['categoria_id'];
     rel="stylesheet" />
 
   <link rel="stylesheet" href="CSS/style.css" />
-  <link rel="stylesheet" href="CSS/fichamentos.css" />
-
+  <link rel="stylesheet" href="CSS/livros.css" />
   <title>PROJETO LITERATURA</title>
 
   <style>
@@ -46,6 +76,7 @@ $categoria_id = $_POST['categoria_id'];
       display: flex;
       gap: 20px;
       flex-wrap: wrap;
+
 
 
     }
@@ -66,35 +97,20 @@ $categoria_id = $_POST['categoria_id'];
 
     }
 
-
-    table {
-      text-align: center;
-      margin-top: 20px;
-      border-collapse: collapse;
-      width: 60%;
-
-      margin: 20px auto;
+    .link_fichamento {
+      color: red;
     }
 
-
-    th,
-    td {
-      border: 1px solid #333;
-      padding: 8px;
-      text-align: left;
+    .autor {
+      font-size: 10px;
     }
 
-    th {
-      background-color: #f2f2f2;
-    }
-
-    a {
-      text-decoration: dashed;
-      color: blue;
-      padding: 10px;
+    .nome_autor {
+      font-size: 10px;
     }
   </style>
 
+  <script src="teste.js"></script>
 
 </head>
 
@@ -102,14 +118,10 @@ $categoria_id = $_POST['categoria_id'];
   <!-- Cabeçalho do site -->
   <header>
     <div class="logo">
-      <div class="p1">
-        <h1>LITERA</h1>
-      </div>
-
-      <div class="p2">
-        <h1>TURE-SE</h1>
-      </div>
+      <img src="IMG/logo-litera-Photoroom.png" alt="" width="250px" height="30px">
     </div>
+    </div>
+
 
     <div class="menu-mobile-button">
       <div class="bar"></div>
@@ -127,7 +139,7 @@ $categoria_id = $_POST['categoria_id'];
               d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L8 2.207l6.646 6.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293z" />
             <path d="m8 3.293 6 6V13.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5V9.293z" />
           </svg>Home</a></li>
-      <li><a href="livros.html"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+      <li><a href="livros_atualizado.php"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
             class="bi bi-book-half" viewBox="0 0 16 16">
             <path
               d="M8.5 2.687c.654-.689 1.782-.886 3.112-.752 1.234.124 2.503.523 3.388.893v9.923c-.918-.35-2.107-.692-3.287-.81-1.094-.111-2.278-.039-3.213.492zM8 1.783C7.015.936 5.587.81 4.287.94c-1.514.153-3.042.672-3.994 1.105A.5.5 0 0 0 0 2.5v11a.5.5 0 0 0 .707.455c.882-.4 2.303-.881 3.68-1.02 1.409-.142 2.59.087 3.223.877a.5.5 0 0 0 .78 0c.633-.79 1.814-1.019 3.222-.877 1.378.139 2.8.62 3.681 1.02A.5.5 0 0 0 16 13.5v-11a.5.5 0 0 0-.293-.455c-.952-.433-2.48-.952-3.994-1.105C10.413.809 8.985.936 8 1.783" />
@@ -167,6 +179,8 @@ $categoria_id = $_POST['categoria_id'];
 
 
 
+
+  <!-- Menu Desktop -->
   <nav class="menu-desktop">
     <ul>
       <li>
@@ -178,7 +192,6 @@ $categoria_id = $_POST['categoria_id'];
           </svg></a>
       </li>
       <!--HOME ICON-->
-
       <li>
         <a href="livros.html"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
             class="bi bi-book-half" viewBox="0 0 16 16">
@@ -187,7 +200,6 @@ $categoria_id = $_POST['categoria_id'];
           </svg></a>
       </li>
       <!--LIVROS ICON-->
-
       <li>
         <a href="turmas.html"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
             class="bi bi-person-workspace" viewBox="0 0 16 16">
@@ -197,7 +209,6 @@ $categoria_id = $_POST['categoria_id'];
           </svg></a>
       </li>
       <!--TURMAS ICON-->
-
       <li>
         <a href="desafios.html"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
             class="bi bi-journal-check" viewBox="0 0 16 16">
@@ -210,7 +221,6 @@ $categoria_id = $_POST['categoria_id'];
           </svg></a>
       </li>
       <!--DESAFIOS ICON-->
-
       <li>
         <a href="login.html"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
             class="bi bi-person-fill" viewBox="0 0 16 16">
@@ -223,133 +233,104 @@ $categoria_id = $_POST['categoria_id'];
   </header>
 
   <div class="corp-title">
-    <div class="title">
-      <?php
-
-      echo "<h2>" . $categoria_id . "</h2>"
-      ?>
-      <!-- <h2>Fichamentos</h2> -->
-    </div>
+    <h2 class="title">Livros Cadastrados</h2>
   </div>
-  <table>
 
-    <thead>
-      <tr>
-        <th>Aluno</th>
-        <th>Fichamento</th>
-      </tr>
-    </thead>
-
-
-
-    <!-- <div class="container" -->>
-    <tbody>
-      <?php
-
-      /*     if ($result->num_rows > 0) {
-      while ($row = $result->fetch_assoc()) {
-
-        if ($row["titulo"] == $categoria_id) {
-          echo "<div class='caixa'>";
-          /*       echo "<h3>" . htmlspecialchars($row["titulo"]) . "</h3>"; */
-      /*  echo "<p> <strong> Aluno: </strong>" . htmlspecialchars($row["nome"]) . "</p>" . "</br>";
-          echo "<p> <strong> Fichamento: </strong>" . htmlspecialchars($row["fichamento"]) . "</p>";
-          echo "</div>"; */
-      /*   } */
-      /*   } */
-      /*  } */ /* else {
-      echo "Nenhuma informação encontrada.";
-    } */
-
-      $cont = 0;
-
-      if ($result->num_rows > 0) {
-
-        while ($row = $result->fetch_assoc()) {
-
-          if ($row["titulo"] == $categoria_id) {
+  <div class="sectionclass">
+    <section class="livros-lista">
+      <div class="livro-item">
+        <h3>Dom Casmurro</h3>
+        <p class="nome-autor">Autor: Machado de Assis</p>
+        <a class="ver-fichamentos" href="fichamentos-livro.html">Ver fichamentos</a>
+        <a href="adicionar-fichamento.html">
+          <div class="btnZ">
+            <button class="button" type="submit">Adicionar fichamento</button>
+          </div>
+        </a>
 
 
-            echo "<tr>";
+      </div>
+      <div class="livro-item">
+        <h3>Capitães da Areia</h3>
+        <p class="nome-autor">Autor: Jorge Amado</p>
+        <a class="ver-fichamentos" href="fichamentos-livro.html">Ver fichamentos</a>
 
-            echo "<td>" . $row['nome'] . "</td>";
-            echo "<td>";
-            
-                  echo "<a href='detalhes.php?id=" . $row['id'] . "'>". htmlspecialchars($row['capitulo']). "</a>";
-            /* echo "</td>"; */
+        <a href="adicionar-fichamento.html">
+          <div class="btnZ">
+            <button class="button" type="submit">Adicionar fichamento</button>
+          </div>
+        </a>
+      </div>
+      <div class="livro-item">
+        <h3>Grande Sertão: Veredas</h3>
+        <p class="nome-autor">Autor: João Guimarães Rosa</p>
+        <a class="ver-fichamentos" href="fichamentos-livro.html">Ver fichamentos</a>
 
+        <a href="adicionar-fichamento.html">
+          <div class="btnZ">
+            <button class="button" type="submit">Adicionar fichamento</button>
+          </div>
+        </a>
+      </div>
+    </section>
+  </div>
 
-
-
-            while ($row = $result->fetch_assoc()) {
-              if ($row['nome'] == $row['nome']) {
-                /* echo "<td>"; */
-                echo "<a href='detalhes.php?id=" . $row['id'] . "'>". htmlspecialchars($row['capitulo']). "</a>";
-                
-              }
-
-              $cont++;
-            }
-            echo "</td>";
-
-            echo "</tr>";
-            /*  echo "<div class='caixa'>";
-          /*   echo "<h3>" . htmlspecialchars($row["titulo"]) . "</h3>"; */
-            /*   echo "<p> <strong> Aluno: </strong>" . htmlspecialchars($row["nome"]) . "</p>" . "</br>";
-          echo "<p> <strong> Fichamento: </strong>" . htmlspecialchars($row["fichamento"]) . "</p>";
-          echo "</div>"; */
-          }
-        }
-      } else {
-        echo "Nenhuma informação encontrada.";
-      }
+  <div class="container">
+    <?php while ($row = $result->fetch_assoc()): ?>
+      <div class="caixa">
+        <strong>
+          <!-- <p>Livro:</p> -->
 
 
-      // $conn->close();
-      ?>
-    </tbody>
-  </table>
-  <thead>
-    <tr>
-      <th></th>
+        </strong><?php echo htmlspecialchars($row['livro']); ?>
 
-    </tr>
+        <p class="autor">Autor:</p>
 
+        <?php
 
-  </thead>
+        echo "<div class = nome_autor>";
+        echo htmlspecialchars($row['autor']);
+        echo "</div>";
 
+        ?>
 
-  <?php
+        <form action="adicionar-fichamento1.php" method="post" style="display:inline;">
 
-  // $conn->close();
-  ?>
+          <input type="hidden" name="categoria_id" value="<?php echo $row['livro']; ?>">
 
 
+          <a class="link_fichamento" href="fichamentos-livro.php">Ver Fichamento</a>
+
+          <button type="submit" class="button">Adicionar Fichamento</button>
+
+        </form>
+
+        <form action="fichamentos-livro.php" method="post" style="display:inline;">
+
+          <input type="hidden" name="categoria_id" value="<?php echo $row['livro']; ?>">
+
+          
+          <button type="submit" class="button">Ver Fichamento</button>
+
+        </form>
+
+      </div>
+    <?php endwhile; ?>
 
   </div>
 
 
+  <div class="btnx">
+    <a href="cadastro-livro.html"><button class="button" type="submit">Cadastrar livro</button>
+    </a>
+  </div>
 
-  <!-- 
-  <section class="fichamentos-lista">
-    <div class="fichamento-item"> -->
-  <?php
-  //  while ($user_data = mysqli_fetch_assoc($result)) {
+  <footer>
+    <p>
+      Projeto escolar de fichamentos - Todos os direitos reservados © 2025
+    </p>
+  </footer>
 
-
-
-  //   echo "<p>" . "Livro:"  . $user_data['livro'] . "</p>";
-
-  //  echo "<p>" . "Aluno:"  . $user_data['nome'] . "</p>";
-
-  //   echo "<p>" . "Opinião:"  . $user_data['fichamento'] . "</p>";
-  //  }
-
-  // 
-  ?>
-  <!-- </div> -->
-
-  <!-- </section> -->
 
 </body>
 

@@ -27,7 +27,8 @@ $categoria_id = $_POST['categoria_id'];
  $result = mysqli_query($conexao, "INSERT INTO fichamento(fichamento,capitulo,turma,nome,titulo) values ('$fichamento','$capitulo','1','valdenlson','$categoria_id')");
 
 
- header('Location: livros.php');
+ header('Location: livros_atualizado.php');
+
 
  if ($result()) {
     echo "Produto cadastrado com sucesso!";

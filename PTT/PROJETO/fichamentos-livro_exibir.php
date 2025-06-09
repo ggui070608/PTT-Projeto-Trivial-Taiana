@@ -274,18 +274,19 @@ $categoria_id = $_POST['categoria_id'];
 
             echo "<td>" . $row['nome'] . "</td>";
             echo "<td>";
-            
-                  echo "<a href='detalhes.php?id=" . $row['id'] . "'>". htmlspecialchars($row['capitulo']). "</a>";
+            echo "<a href='#'>";
+            echo $row['capitulo'];
+            echo "</a>";
             /* echo "</td>"; */
-
 
 
 
             while ($row = $result->fetch_assoc()) {
               if ($row['nome'] == $row['nome']) {
                 /* echo "<td>"; */
-                echo "<a href='detalhes.php?id=" . $row['id'] . "'>". htmlspecialchars($row['capitulo']). "</a>";
-                
+                echo "<a href='#'>";
+                echo $row['capitulo'];
+                echo "</a>";
               }
 
               $cont++;

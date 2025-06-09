@@ -244,7 +244,9 @@ print_r($row("livro"));
       <form action="adicionar-fichamento1.php" method="post" style="display:inline;">
         <input type="hidden" name="categoria_id" value="<?php echo $row['livro'];?>">
         <button type="submit" class="button">Adicionar Fichamento</button>
+        <
       </form>
+      
     </div>
   <?php endwhile; ?>
 
