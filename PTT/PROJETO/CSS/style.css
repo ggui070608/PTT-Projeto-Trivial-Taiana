@@ -42,6 +42,7 @@
 
 .menu-desktop svg {
   fill: #fff;
+  margin-top: 5px;
   transition: fill 0.3s;
 }
 
@@ -52,7 +53,9 @@
 
 body {
 
-  background-color: #f4e1d2;
+  background-image: url(/PTT/PROJETO/IMG/fundo-litera.jpeg);
+  background-repeat: repeat;
+  background-size: cover;
   /* Cor creme, como papel envelhecido */
   color: #4b3a31;
   /* Cor marrom escuro, lembrando tinta de antigamente */
@@ -67,33 +70,12 @@ header {
   display: grid;
   justify-content: space-between;
   align-items: center;
-  box-shadow: 0px 5px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 3px 7px black;
 }
 
 .logo {
   display: flex;
-  font-family: "Merriweather", serif;
-  font-size: 20px;
-  text-transform: uppercase;
-  letter-spacing: 4px;
-
-
-}
-
-.p1 {
-  color: #fff;
-  background-clip: content-box;
-  background: linear-gradient(0deg, #b8b7b7 2%, #fff 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.p2 {
-  color: #d3a15c;
-  background-clip: content-box;
-  background: linear-gradient(0deg, #6a4e23 2%, #d3a15c 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  margin-left: 10px;
 }
 
 /* Menu */
@@ -116,10 +98,14 @@ nav a:hover {
 }
 
 .livros-lista,
-.desafios-lista,
-.fichamentos-lista,
-.turmas-lista {
+.fichamentos-lista {
   margin-top: 100px;
+}
+
+.alunos-lista,
+.turmas-lista,
+.desafios-lista {
+  margin-top: 50px;
 }
 
 .corp-title,
@@ -194,7 +180,7 @@ footer {
   width: 100%;
   z-index: 10;
   padding: 10px;
-  font-size: 12px;
+  font-size: 15px;
 }
 
 /* Estilo do link */
@@ -216,15 +202,31 @@ a:hover {
 .login-container,
 .cadastro-container {
   align-items: center;
-  background-color: #f4e1d2;
-  border-radius: 50px;
+  background-color: #F5EAC4;
+  filter: opacity(10px);
+  border-radius: 2rem;
   box-shadow: rgb(117, 117, 117) 4px 4px 20px;
   display: flex;
   flex-direction: column;
-  margin: 3rem auto;
+  margin: 5rem auto;
   overflow: auto;
   padding: 2rem;
-  width: 60vh;
+  width: 50vh;
+  z-index: 1;
+}
+
+.fichar-container{
+  align-items: center;
+  background-color: #F5EAC4;
+  filter: opacity(10px);
+  border-radius: 2rem;
+  box-shadow: rgb(117, 117, 117) 4px 4px 20px;
+  display: flex;
+  flex-direction: column;
+  margin: 5rem auto;
+  overflow: auto;
+  padding: 2rem;
+  width: 90vh;
   z-index: 1;
 }
 
@@ -236,15 +238,16 @@ a:hover {
 }
 
 .box {
-  margin-top: 15px;
+  margin: 32px 0;
 }
 
 .inputs {
-  border-radius: 20px;
+  border-radius: 10px;
   border: 2px solid #f4e1d2;
+  box-sizing: border-box;
   outline: none;
-  height: 30px;
-  width: 50vh;
+  height: 40px;
+  width: 45vh;
   transition: .3s;
 }
 
@@ -269,7 +272,7 @@ a:hover {
   font-size: 18px;
   color: #fff;
   background-color: #e9b124;
-  border-radius: 20px;
+  border-radius: 10px;
   border: none;
   height: 30px;
   width: 20vh;
@@ -277,6 +280,7 @@ a:hover {
 }
 
 .btn button:hover {
+  transform: translateY(-5px);
   background-color: #f3ba2b;
 }
 
@@ -343,6 +347,10 @@ a:hover {
 /* Responsividade */
 @media (max-width: 768px) {
 
+  /*CARROSSEL*/
+
+
+  /*MENU*/
   .menu-mobile-button {
     display: block;
   }
@@ -351,11 +359,13 @@ a:hover {
     display: none;
   }
 
+  /*LIVROS*/
   .livros-lista {
     flex-direction: column;
     align-items: center;
   }
 
+  /*TAMANHO TEXTO & BACK*/
   .theme-carrossel {
     font-size: 14px;
   }
@@ -369,9 +379,13 @@ a:hover {
     width: 40vh;
   }
 
+  .box {
+    margin: 24px 0;
+  }
+
   .box input {
-    height: 25px;
-    width: 38vh;
+    height: 30px;
+    width: 35vh;
   }
 
   .btn {
@@ -379,17 +393,19 @@ a:hover {
   }
 
   .btn button {
+    margin-top: -5px;
     font-size: 14px;
-    height: 27px;
-    width: 18vh;
+    height: 25px;
+    width: 17vh;
   }
-
 }
 
 @media screen and (max-width: 540px) {
 
   .logo {
-    font-size: 14px;
+    width: 150px;
+    height: 5px;
+    margin-bottom: 20px;
   }
 
   nav ul {
@@ -439,12 +455,16 @@ a:hover {
 
   .login-container,
   .cadastro-container {
-    width: 37vh;
+    width: 33vh;
+  }
+
+  .box {
+    margin: 16px 0;
   }
 
   .box input {
-    height: 22px;
-    width: 36vh;
+    height: 25px;
+    width: 28vh;
   }
 
   .btn {
@@ -452,8 +472,9 @@ a:hover {
   }
 
   .btn button {
-    font-size: 14px;
-    height: 25px;
-    width: 16vh;
+    margin-top: -10px;
+    font-size: 10px;
+    height: 20px;
+    width: 15vh;
   }
 }

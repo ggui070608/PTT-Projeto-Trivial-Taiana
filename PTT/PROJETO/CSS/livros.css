@@ -20,24 +20,27 @@ body {
 /* Livros */
 .livros-lista {
   display: flex;
-  flex-wrap: wrap;
+ 
   justify-content: center;
   gap: 40px;
   margin-top: 20px;
+  
 }
 
 .livro-item {
+  position: relative;
   background-color: #FFF;
   padding: 12px;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  height: 18rem;
   width: 220px;
   text-align: center;
 }
 
 .livro-item h3 {
   font-size: 20px;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
   color: #333;
 }
 
@@ -46,6 +49,7 @@ body {
 }
 
 .livro-item a {
+  
   color: #FF6347;
   font-weight: bold;
   text-decoration: none;
@@ -54,3 +58,61 @@ body {
 .livro-item a:hover {
   text-decoration: underline;
 }
+
+.btnx {
+ position: fixed;
+  bottom: 0;
+  width: 100%;
+  z-index: 200;
+  padding: 50px;
+}
+
+.btnx button {
+  font-family: "Koulen";
+  font-size: 18px;
+  color: #fff;
+  background-color: #e9b124;
+  border-radius: 20px;
+  border: none;
+  height: 30px;
+  width: 20vh;
+  transition: .2s;
+}
+
+.btnZ button:hover {
+  background-color: #f3ba2b;
+}
+
+.nome-autor{
+  font-size: 12px;
+}
+
+.btnZ button {
+  margin-left: 1.9rem;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  margin-bottom: 1rem;
+  margin-top: 10px;
+  font-family: "Koulen";
+  font-size: 18px;
+  color: #fff;
+  background-color: #e9b124;
+  border-radius: 20px;
+  border: none;
+  height: 30px;
+  width: 20vh;
+  transition: .2s;
+}
+
+.btnZ button:hover {
+  background-color: #f3ba2b;
+}
+
+.ver-fichamentos{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+

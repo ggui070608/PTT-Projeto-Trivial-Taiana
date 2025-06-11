@@ -1,3 +1,58 @@
+<?php
+
+session_start();
+
+include_once('config.php');
+
+if ((!isset($_SESSION['email']) == true) and (!isset($_SESSION['senha']) == true)) {
+  unset($_SESSION['email']);
+  unset($_SESSION['senha']);
+  // header('Location: login.php');
+}
+
+$logado = $_SESSION['email'];
+
+
+$sql = "SELECT * FROM livro";
+
+$result = $conexao->query($sql);
+
+
+
+
+/* if (isset($_POST['submit'])) {
+
+$livro = $_POST['livro'];
+$autor = $_POST['autor'];
+
+
+
+ header('Location: testandocomunicacao.php');
+print_r($row("livro")); 
+
+   $email = $_POST['email'];
+  $nome = $_POST['name'];
+  $senha = $_POST['senha'];
+  $id = $_POST['turma'];
+
+
+
+
+  include_once('config.php');
+
+  
+  $result = mysqli_query($conexao, "INSERT INTO aluno(email,nome,senha,fk_turma) values ('$email','$nome','$senha','$id')");
+ header('Location: login.php'); 
+} */
+
+
+//  print_r($result);
+?>
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 
@@ -12,18 +67,58 @@
     rel="stylesheet" />
 
   <link rel="stylesheet" href="CSS/style.css" />
-  <link rel="stylesheet" href="CSS/alunos.css" />
+  <link rel="stylesheet" href="CSS/livros.css" />
+  <link rel="stylesheet" href="CSS/fichamentos.css" />
+
+    <style>
+   
+        .container {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            
+
+        }
+        .caixa {
+            border: 1px solid #ccc;
+            padding: 20px;
+            width: 200px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            color: #666;
+            text-align: center;
+            line-height: 1.5rem;
+            margin-left: 2rem;
+            margin-top: 2rem;
+            border-radius: 8px;
+            background-color: #FFF;
+
+
+        }
+    </style>
+
+
+  <script src="teste.js"></script>
+
+
+
+
   <title>PROJETO LITERATURA</title>
+
+
 </head>
 
 <body>
   <!-- Cabeçalho do site -->
   <header>
     <div class="logo">
-           <img src="IMG/logo-litera-Photoroom.png" alt="" width="250px" height="30px">
-            </div>
-        </div>
+      <div class="p1">
+        <h1>LITERA</h1>
+      </div>
 
+      <div class="p2">
+        <h1>TURE-SE</h1>
+      </div>
+    </div>
 
     <div class="menu-mobile-button">
       <div class="bar"></div>
@@ -81,6 +176,8 @@
 
 
 
+
+  <!-- Menu Desktop -->
   <nav class="menu-desktop">
     <ul>
       <li>
@@ -92,7 +189,6 @@
           </svg></a>
       </li>
       <!--HOME ICON-->
-
       <li>
         <a href="livros.html"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
             class="bi bi-book-half" viewBox="0 0 16 16">
@@ -101,7 +197,6 @@
           </svg></a>
       </li>
       <!--LIVROS ICON-->
-
       <li>
         <a href="turmas.html"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
             class="bi bi-person-workspace" viewBox="0 0 16 16">
@@ -111,7 +206,6 @@
           </svg></a>
       </li>
       <!--TURMAS ICON-->
-
       <li>
         <a href="desafios.html"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
             class="bi bi-journal-check" viewBox="0 0 16 16">
@@ -124,7 +218,6 @@
           </svg></a>
       </li>
       <!--DESAFIOS ICON-->
-
       <li>
         <a href="login.html"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
             class="bi bi-person-fill" viewBox="0 0 16 16">
@@ -136,42 +229,93 @@
   </nav>
   </header>
 
-
   <div class="corp-title">
-    <h2 class="title">Alunos - Turma X</h2>
+    <h2 class="title">Livros Cadastrados</h2>
+  </div>
+  
+  
+
+
+ <div class="container">
+  <?php while($row = $result->fetch_assoc()): ?>
+    <div  class="caixa">
+      <strong><p>Livro:</p></strong><?php echo htmlspecialchars($row['livro']); ?>
+      <strong><p>Autor:</p></strong><?php echo htmlspecialchars($row['autor']); ?><br>
+      <form action="adicionar-fichamento1.php" method="post" style="display:inline;">
+        <input type="hidden" name="categoria_id" value="<?php echo $row['livro'];?>">
+        <button type="submit" class="button">Adicionar Fichamento</button>
+        <
+      </form>
+      
+    </div>
+  <?php endwhile; ?>
+
   </div>
 
-  <section class="alunos-lista">
-    <div class="aluno-item">
-      <div class="name-hidden">
-        <div class="name-aluno">
-          <h3>Aluno:</h3>
-        </div>
-      </div>
-      <a href="fichamentos-aluno.html">Ver fichamentos</a>
-    </div>
-    
-    <div class="aluno-item">
-      <div class="name-hidden">
-        <div class="name-aluno">
-          <h3>Aluno:</h3>
-        </div>
-      </div>
-      <a href="fichamentos-aluno.html">Ver fichamentos</a>
-    </div>
-
-    <div class="aluno-item">
-      <div class="name-hidden">
-        <div class="name-aluno">
-          <h3>Aluno:</h3>
-        </div>
-      </div>
-      <a href="fichamentos-aluno.html">Ver fichamentos</a>
-    </div>
-  </section>
 
 
+
+
+  <!--   <div class="sectionclass">
+    <section class="livros-lista">
+
+      <div class="livro-item">
+        <h3>Dom Casmurro</h3>
+        <p class="nome-autor">Autor: Machado de Assis</p>
+        <a class="ver-fichamentos" href="fichamentos-livro.html">Ver fichamentos</a>
+        <a href="adicionar-fichamento.html">
+          <div class="btnZ">
+            <button class="button" type="submit">Adicionar fichamento</button>
+          </div>
+        </a>
+
+        <form action="adicionar-fichamento.php" method="post">
+
+          <p name="teste">vamos testar</p>
+          <input type="submit" value="enviar" name="submit">
+
+        </form>
+      </div>
+      <div class="livro-item">
+        <h3>Capitães da Areia</h3>
+        <p class="nome-autor">Autor: Jorge Amado</p>
+        <a class="ver-fichamentos" href="fichamentos-livro.html">Ver fichamentos</a>
+
+        <a href="adicionar-fichamento.html">
+          <div class="btnZ">
+            <button class="button" type="submit">Adicionar fichamento</button>
+          </div>
+        </a>
+      </div>
+
+      <div class="livro-item">
+        <h3>Grande Sertão: Veredas</h3>
+        <p class="nome-autor">Autor: João Guimarães Rosa</p>
+        <a class="ver-fichamentos" href="fichamentos-livro.html">Ver fichamentos</a>
+
+        <a href="adicionar-fichamento.html">
+          <div class="btnZ">
+            <button class="button" type="submit">Adicionar fichamento</button>
+          </div>
+        </a>
+      </div>
+
+    </section>
+  </div> -->
+
+
+  <div class="btnx">
+    <a href="cadastro-livro.php"><button class="button" type="submit">Cadastrar livro</button>
+    </a>
+  </div>
+
+  <footer>
+    <p>
+      Projeto escolar de fichamentos - Todos os direitos reservados © 2025
+    </p>
   </footer>
+
+
 </body>
 
 </html>

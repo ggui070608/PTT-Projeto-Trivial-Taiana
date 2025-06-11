@@ -1,3 +1,28 @@
+<?php
+
+session_start();
+
+include_once('config.php');
+
+if ((!isset($_SESSION['email']) == true) and (!isset($_SESSION['senha']) == true)) {
+  unset($_SESSION['email']);
+  unset($_SESSION['senha']);
+  // header('Location: login.php');
+}
+$logado = $_SESSION['email'];
+
+$sql = "SELECT * FROM fichamento";
+
+
+
+$result = $conexao->query($sql);
+
+
+$categoria_id = $_POST['categoria_id'];
+
+//  print_r($result);
+?>
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 
@@ -12,18 +37,79 @@
     rel="stylesheet" />
 
   <link rel="stylesheet" href="CSS/style.css" />
-  <link rel="stylesheet" href="CSS/alunos.css" />
+  <link rel="stylesheet" href="CSS/fichamentos.css" />
+
   <title>PROJETO LITERATURA</title>
+
+  <style>
+    .container {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+
+
+    }
+
+    .caixa {
+      border: 1px solid #ccc;
+      padding: 20px;
+      width: 200px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      color: #666;
+      text-align: center;
+      line-height: 1.5rem;
+      margin-left: 2rem;
+      margin-top: 2rem;
+      border-radius: 8px;
+      background-color: #FFF;
+
+
+    }
+
+
+    table {
+      text-align: center;
+      margin-top: 20px;
+      border-collapse: collapse;
+      width: 60%;
+
+      margin: 20px auto;
+    }
+
+
+    th,
+    td {
+      border: 1px solid #333;
+      padding: 8px;
+      text-align: left;
+    }
+
+    th {
+      background-color: #f2f2f2;
+    }
+
+    a {
+      text-decoration: dashed;
+      color: blue;
+      padding: 10px;
+    }
+  </style>
+
+
 </head>
 
 <body>
   <!-- Cabeçalho do site -->
   <header>
     <div class="logo">
-           <img src="IMG/logo-litera-Photoroom.png" alt="" width="250px" height="30px">
-            </div>
-        </div>
+      <div class="p1">
+        <h1>LITERA</h1>
+      </div>
 
+      <div class="p2">
+        <h1>TURE-SE</h1>
+      </div>
+    </div>
 
     <div class="menu-mobile-button">
       <div class="bar"></div>
@@ -136,42 +222,136 @@
   </nav>
   </header>
 
-
   <div class="corp-title">
-    <h2 class="title">Alunos - Turma X</h2>
+    <div class="title">
+      <?php
+
+      echo "<h2>" . $categoria_id . "</h2>"
+      ?>
+      <!-- <h2>Fichamentos</h2> -->
+    </div>
+  </div>
+  <table>
+
+    <thead>
+      <tr>
+        <th>Aluno</th>
+        <th>Fichamento</th>
+      </tr>
+    </thead>
+
+
+
+    <!-- <div class="container" -->>
+    <tbody>
+      <?php
+
+      /*     if ($result->num_rows > 0) {
+      while ($row = $result->fetch_assoc()) {
+
+        if ($row["titulo"] == $categoria_id) {
+          echo "<div class='caixa'>";
+          /*       echo "<h3>" . htmlspecialchars($row["titulo"]) . "</h3>"; */
+      /*  echo "<p> <strong> Aluno: </strong>" . htmlspecialchars($row["nome"]) . "</p>" . "</br>";
+          echo "<p> <strong> Fichamento: </strong>" . htmlspecialchars($row["fichamento"]) . "</p>";
+          echo "</div>"; */
+      /*   } */
+      /*   } */
+      /*  } */ /* else {
+      echo "Nenhuma informação encontrada.";
+    } */
+
+      $cont = 0;
+
+      if ($result->num_rows > 0) {
+
+        while ($row = $result->fetch_assoc()) {
+
+          if ($row["titulo"] == $categoria_id) {
+
+
+            echo "<tr>";
+
+            echo "<td>" . $row['nome'] . "</td>";
+            echo "<td>";
+            echo "<a href='#'>";
+            echo $row['capitulo'];
+            echo "</a>";
+            /* echo "</td>"; */
+
+
+
+            while ($row = $result->fetch_assoc()) {
+              if ($row['nome'] == $row['nome']) {
+                /* echo "<td>"; */
+                echo "<a href='#'>";
+                echo $row['capitulo'];
+                echo "</a>";
+              }
+
+              $cont++;
+            }
+            echo "</td>";
+
+            echo "</tr>";
+            /*  echo "<div class='caixa'>";
+          /*   echo "<h3>" . htmlspecialchars($row["titulo"]) . "</h3>"; */
+            /*   echo "<p> <strong> Aluno: </strong>" . htmlspecialchars($row["nome"]) . "</p>" . "</br>";
+          echo "<p> <strong> Fichamento: </strong>" . htmlspecialchars($row["fichamento"]) . "</p>";
+          echo "</div>"; */
+          }
+        }
+      } else {
+        echo "Nenhuma informação encontrada.";
+      }
+
+
+      // $conn->close();
+      ?>
+    </tbody>
+  </table>
+  <thead>
+    <tr>
+      <th></th>
+
+    </tr>
+
+
+  </thead>
+
+
+  <?php
+
+  // $conn->close();
+  ?>
+
+
+
   </div>
 
-  <section class="alunos-lista">
-    <div class="aluno-item">
-      <div class="name-hidden">
-        <div class="name-aluno">
-          <h3>Aluno:</h3>
-        </div>
-      </div>
-      <a href="fichamentos-aluno.html">Ver fichamentos</a>
-    </div>
-    
-    <div class="aluno-item">
-      <div class="name-hidden">
-        <div class="name-aluno">
-          <h3>Aluno:</h3>
-        </div>
-      </div>
-      <a href="fichamentos-aluno.html">Ver fichamentos</a>
-    </div>
-
-    <div class="aluno-item">
-      <div class="name-hidden">
-        <div class="name-aluno">
-          <h3>Aluno:</h3>
-        </div>
-      </div>
-      <a href="fichamentos-aluno.html">Ver fichamentos</a>
-    </div>
-  </section>
 
 
-  </footer>
+  <!-- 
+  <section class="fichamentos-lista">
+    <div class="fichamento-item"> -->
+  <?php
+  //  while ($user_data = mysqli_fetch_assoc($result)) {
+
+
+
+  //   echo "<p>" . "Livro:"  . $user_data['livro'] . "</p>";
+
+  //  echo "<p>" . "Aluno:"  . $user_data['nome'] . "</p>";
+
+  //   echo "<p>" . "Opinião:"  . $user_data['fichamento'] . "</p>";
+  //  }
+
+  // 
+  ?>
+  <!-- </div> -->
+
+  <!-- </section> -->
+
 </body>
 
 </html>

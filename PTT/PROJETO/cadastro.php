@@ -1,3 +1,30 @@
+<?php
+
+include_once('config.php');
+
+if (isset($_POST['submit'])) {
+
+
+
+
+  $email = $_POST['email'];
+  $nome = $_POST['name'];
+  $senha = $_POST['senha'];
+  $id = $_POST['turma'];
+
+
+
+
+  include_once('config.php');
+
+  
+  $result = mysqli_query($conexao, "INSERT INTO aluno(email,nome,senha,fk_turma) values ('$email','$nome','$senha','$id')");
+ header('Location: login.php');
+}
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 
@@ -20,9 +47,14 @@
   <!-- Cabeçalho do site -->
   <header>
     <div class="logo">
-           <img src="IMG/logo-litera-Photoroom.png" alt="" width="250px" height="30px">
-            </div>
-        </div>
+      <div class="p1">
+        <h1>LITERA</h1>
+      </div>
+
+      <div class="p2">
+        <h1>TURE-SE</h1>
+      </div>
+    </div>
 
     <div class="menu-mobile-button">
       <div class="bar"></div>
@@ -100,10 +132,10 @@
       </div>
     </div>
 
-    <form id="form">
+    <form action="cadastro.php" method="POST">
       <div class="box">
         <div>
-          <input type="email" placeholder="Insira um Email" class="inputs required" oninput="emailValidate()" />
+          <input type="email" placeholder="Insira um Email" class="inputs required" oninput="emailValidate()" name="email" />
         </div>
 
         <div>
@@ -113,7 +145,7 @@
 
       <div class="box">
         <div>
-          <input type="text" placeholder="Digite seu nome" class="inputs required" oninput="nameValidate()" />
+          <input type="text" placeholder="Digite seu nome" class="inputs required" oninput="nameValidate()" name="name" />
         </div>
 
         <div>
@@ -124,7 +156,7 @@
       <div class="box">
         <div>
           <input type="password" placeholder="Insira uma Senha" class="inputs required"
-            oninput="MainPasswordValidate()" />
+            oninput="MainPasswordValidate()" name="senha" />
         </div>
 
         <div>
@@ -142,9 +174,41 @@
         </div>
       </div>
 
+
+      <?php
+      $sql = "SELECT id, t FROM turma  ORDER BY t ASC
+     ";
+
+
+      $resultado = $conexao->query($sql);
+
+      if ($resultado === false) {
+        die("Erro na consulta SQL: " . $conexao->error);
+      }
+
+      echo '<select name="turma" id="turma">';
+
+      echo '<option value="">Selecione uma turma</option>';
+
+      if ($resultado->num_rows > 0) {
+        while ($row = $resultado->fetch_assoc()) {
+      
+          $id   = $row['id'];
+          $nome = $row['t'];
+          echo "<option value=\"{$id}\">{$nome}</option>";
+        }
+      } else {
+        echo '<option value="">Cadastre uma turma</option>';
+      }
+      echo '</select>';
+      
+      ?>
+
       <div class="btn">
-        <button class="button" type="submit">Cadastrar</button>
+        <input type="submit" value="Cadastrar" name="submit">
+
       </div>
+
 
       <p class="link">
         Já tem uma conta? <a href="login.html">Faça login</a>

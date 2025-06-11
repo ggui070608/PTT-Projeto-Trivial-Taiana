@@ -1,3 +1,19 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 
@@ -20,9 +36,14 @@
   <!-- Cabeçalho do site -->
   <header>
     <div class="logo">
-           <img src="IMG/logo-litera-Photoroom.png" alt="" width="250px" height="30px">
-            </div>
-        </div>
+      <div class="p1">
+        <h1>LITERA</h1>
+      </div>
+
+      <div class="p2">
+        <h1>TURE-SE</h1>
+      </div>
+    </div>
 
     <div class="menu-mobile-button">
       <div class="bar"></div>
@@ -102,10 +123,10 @@
       </div>
     </div>
 
-    <form id="form">
+    <form action="teste.php" method="post" id="form">
       <div class="box">
         <div>
-          <input type="email" placeholder="  Insira seu Email" class="inputs required" />
+          <input type="email" placeholder="  Insira seu Email" class="inputs required" name = "email" />
         </div>
 
         <div>
@@ -115,7 +136,7 @@
 
       <div class="box">
         <div>
-          <input type="password" placeholder="  Insira sua Senha" class="inputs required" />
+          <input type="password" placeholder="  Insira sua Senha" class="inputs required" name="senha"/>
         </div>
 
         <div>
@@ -124,7 +145,7 @@
       </div>
 
       <div class="btn">
-        <button class="button" type="submit">Entrar</button>
+        <input type="submit" name="submit" value="ENTRAR"   />
       </div>
 
       <p class="link">
